@@ -1,0 +1,144 @@
+[
+  {
+    "id": "START",
+    "type": "start",
+    "text": "Good evening. Let's reflect on your day."
+  },
+  {
+    "id": "A1_Q1",
+    "type": "question",
+    "text": "How would you describe your day?",
+    "options": ["Productive", "Tough", "Mixed", "Frustrating"]
+  },
+  {
+    "id": "A1_D1",
+    "type": "decision",
+    "condition": [
+      {
+        "if": ["Productive", "Mixed"],
+        "go_to": "A1_Q_HIGH"
+      },
+      {
+        "if": ["Tough", "Frustrating"],
+        "go_to": "A1_Q_LOW"
+      }
+    ]
+  },
+  {
+    "id": "A1_Q_HIGH",
+    "type": "question",
+    "text": "When things went well today, what made it happen?",
+    "options": [
+      "I prepared well",
+      "The team supported me",
+      "I adapted quickly",
+      "It was mostly luck"
+    ]
+  },
+  {
+    "id": "A1_Q_LOW",
+    "type": "question",
+    "text": "When things didn't go well, what was your first reaction?",
+    "options": [
+      "I thought about what I could control",
+      "I waited for others to act",
+      "I felt stuck",
+      "I pushed through without changing anything"
+    ]
+  },
+  {
+    "id": "A1_R_INT",
+    "type": "reflection",
+    "text": "You handled situations with awareness of your role. That shows ownership and adaptability.",
+    "next": "BRIDGE_1_2"
+  },
+  {
+    "id": "A1_R_EXT",
+    "type": "reflection",
+    "text": "It seems the day felt influenced by external factors. But even small choices matter — noticing them can help improve control.",
+    "next": "BRIDGE_1_2"
+  },
+  {
+    "id": "BRIDGE_1_2",
+    "type": "bridge",
+    "text": "Now let's shift from how you handled situations to what you contributed today.",
+    "next": "A2_Q1"
+  },
+  {
+    "id": "A2_Q1",
+    "type": "question",
+    "text": "Which of these best describes your actions today?",
+    "options": [
+      "I helped someone beyond my role",
+      "I focused only on my tasks",
+      "I expected recognition",
+      "I felt others should do more"
+    ]
+  },
+  {
+    "id": "A2_D1",
+    "type": "decision",
+    "condition": [
+      {
+        "if": [
+          "I helped someone beyond my role",
+          "I focused only on my tasks"
+        ],
+        "go_to": "A2_R_CONTRIBUTION"
+      },
+      {
+        "if": [
+          "I expected recognition",
+          "I felt others should do more"
+        ],
+        "go_to": "A2_R_ENTITLEMENT"
+      }
+    ]
+  },
+  {
+    "id": "A2_R_CONTRIBUTION",
+    "type": "reflection",
+    "text": "You focused on contributing through your actions. That builds trust and long-term impact.",
+    "next": "BRIDGE_2_3"
+  },
+  {
+    "id": "A2_R_ENTITLEMENT",
+    "type": "reflection",
+    "text": "It seems expectations played a role today. Shifting focus to contribution can create better outcomes.",
+    "next": "BRIDGE_2_3"
+  },
+  {
+    "id": "BRIDGE_2_3",
+    "type": "bridge",
+    "text": "Now let's look beyond yourself — how your day connected with others.",
+    "next": "A3_Q1"
+  },
+  {
+    "id": "A3_Q1",
+    "type": "question",
+    "text": "When you think about your day, who comes to mind most?",
+    "options": [
+      "Just myself and my work",
+      "My team",
+      "A colleague who needed help",
+      "The customer or end user"
+    ]
+  },
+  {
+    "id": "A3_R",
+    "type": "reflection",
+    "text": "Your perspective shapes how you experience work. Expanding your focus can bring more meaning and clarity.",
+    "next": "SUMMARY"
+  },
+  {
+    "id": "SUMMARY",
+    "type": "summary",
+    "text": "Today you reflected on your actions, your contribution, and your impact. Small shifts in awareness can lead to meaningful growth.",
+    "next": "END"
+  },
+  {
+    "id": "END",
+    "type": "end",
+    "text": "Thank you for reflecting today. See you tomorrow."
+  }
+]
